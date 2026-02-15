@@ -1,0 +1,38 @@
+.logs-page {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.logs-filters {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+}
+
+.log-row {
+    transition: background var(--transition-fast);
+}
+
+.log-row-attack {
+    border-left: 3px solid var(--status-attack);
+}
+
+.log-row-normal {
+    border-left: 3px solid var(--status-normal);
+}
+
+.attack-type {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+}
+
+.empty-state {
+    padding: 3rem;
+    text-align: center;
+}
+
+.badge-sm {
+    font-size: 0.625rem;
+    padding: 0.125rem 0.5rem;
+}

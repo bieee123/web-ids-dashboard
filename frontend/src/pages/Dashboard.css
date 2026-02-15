@@ -1,0 +1,46 @@
+.dashboard {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.alerts-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-top: 1rem;
+}
+
+.alert-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    transition: all var(--transition-fast);
+}
+
+.alert-item:hover {
+    background: var(--bg-hover);
+    border-color: var(--border-hover);
+}
+
+.alert-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.alert-type {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-family: 'Fira Code', monospace;
+    font-size: 0.875rem;
+}
+
+.alert-confidence {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}

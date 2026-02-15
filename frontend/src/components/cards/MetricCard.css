@@ -1,0 +1,139 @@
+.metric-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: all var(--transition-normal);
+    position: relative;
+    overflow: hidden;
+}
+
+.metric-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.metric-card:hover::before {
+    opacity: 1;
+}
+
+.metric-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+    border-color: var(--border-hover);
+}
+
+/* Color Variants */
+.metric-card-blue::before {
+    background: linear-gradient(90deg, var(--accent-blue), var(--accent-cyan));
+}
+
+.metric-card-red::before {
+    background: var(--critical);
+}
+
+.metric-card-green::before {
+    background: var(--normal);
+}
+
+.metric-card-yellow::before {
+    background: var(--medium);
+}
+
+.metric-card-purple::before {
+    background: var(--accent-purple);
+}
+
+/* Header */
+.metric-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.metric-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59, 130, 246, 0.1);
+    color: var(--accent-blue);
+}
+
+.metric-card-red .metric-icon-wrapper {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--critical);
+}
+
+.metric-card-green .metric-icon-wrapper {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--normal);
+}
+
+.metric-card-yellow .metric-icon-wrapper {
+    background: rgba(234, 179, 8, 0.1);
+    color: var(--medium);
+}
+
+.metric-card-purple .metric-icon-wrapper {
+    background: rgba(139, 92, 246, 0.1);
+    color: var(--accent-purple);
+}
+
+/* Trend */
+.metric-trend {
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 0.25rem 0.5rem;
+    border-radius: 6px;
+}
+
+.metric-trend.positive {
+    background: rgba(16, 185, 129, 0.1);
+    color: var(--normal);
+}
+
+.metric-trend.negative {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--critical);
+}
+
+/* Content */
+.metric-content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.metric-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.metric-value {
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+    line-height: 1;
+}
+
+.metric-subtitle {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin: 0;
+}
