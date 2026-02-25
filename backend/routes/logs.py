@@ -49,7 +49,8 @@ def get_logs(
                 "flag": log.flag,
                 "result": log.result,
                 "attack_type": log.attack_type,
-                "confidence": log.confidence
+                "confidence": log.confidence,
+                "severity": log.severity
             }
             for log in logs
         ]

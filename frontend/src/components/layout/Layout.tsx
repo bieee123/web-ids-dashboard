@@ -7,13 +7,12 @@ interface LayoutProps {
     children: ReactNode;
     title: string;
     subtitle?: string;
-    alertCount?: number;
 }
 
-export default function Layout({ children, title, subtitle, alertCount = 0 }: LayoutProps) {
+export default function Layout({ children, title, subtitle }: LayoutProps) {
     return (
         <div className="layout">
-            <Sidebar alertCount={alertCount} />
+            <Sidebar />
             <div className="layout-main">
                 <Header title={title} subtitle={subtitle} />
                 <main className="layout-content">{children}</main>

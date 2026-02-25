@@ -5,6 +5,7 @@ import Logs from './pages/Logs';
 import Analytics from './pages/Analytics';
 import Reports from './pages/Reports';
 import Settings from './pages/Settings';
+import Notifications from './pages/Notifications';
 import './theme.css';
 
 function App() {
@@ -34,6 +35,8 @@ function App() {
                 return <Reports />;
             case '#/settings':
                 return <Settings />;
+            case '#/notifications':
+                return <Notifications />;
             default:
                 return <Dashboard />;
         }

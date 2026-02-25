@@ -7,18 +7,16 @@ interface DashboardLayoutProps {
     children: ReactNode;
     title: string;
     subtitle?: string;
-    alertCount?: number;
 }
 
 export default function DashboardLayout({
     children,
     title,
     subtitle,
-    alertCount = 0,
 }: DashboardLayoutProps) {
     return (
         <div className="dashboard-layout">
-            <Sidebar alertCount={alertCount} />
+            <Sidebar />
             <div className="main-wrapper">
                 <Header title={title} subtitle={subtitle} />
                 <main className="main-content">{children}</main>

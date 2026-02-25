@@ -19,5 +19,6 @@ class DetectionLog(Base):
 
     # Prediction results
     result = Column(String)
-    attack_type = Column(String)
+    attack_type = Column(String, nullable=True)
     confidence = Column(Float)
+    severity = Column(String)

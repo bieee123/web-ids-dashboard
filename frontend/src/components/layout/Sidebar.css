@@ -21,15 +21,34 @@
     border-bottom: 1px solid var(--border-color);
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
     gap: 0.5rem;
+    position: relative;
+}
+
+.sidebar.collapsed .sidebar-header {
+    justify-content: flex-end;
+}
+
+.sidebar-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    flex: 1;
+}
+
+.sidebar-logo-icon {
+    color: var(--accent-blue);
+    flex-shrink: 0;
 }
 
 .sidebar-title {
-    font-size: 1.25rem;
+    font-size: 1.1rem;
     font-weight: 700;
     color: var(--text-primary);
     white-space: nowrap;
+    letter-spacing: 0.5px;
+    margin: 0;
 }
 
 .sidebar-toggle {
@@ -107,6 +126,11 @@
     min-width: 20px;
     text-align: center;
     animation: pulse 2s infinite;
+}
+
+.attack-badge {
+    background: var(--accent-red);
+    box-shadow: 0 0 8px rgba(239, 68, 68, 0.6);
 }
 
 @keyframes pulse {

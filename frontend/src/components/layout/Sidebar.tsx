@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
     DashboardIcon,
     ActivityIcon,
@@ -8,6 +8,7 @@ import {
     SettingsIcon,
     MenuIcon,
     ChevronLeftIcon,
+    ShieldIcon,
 } from '../Icons';
 import './Sidebar.css';
 
@@ -27,26 +28,31 @@ const navItems: NavItem[] = [
 ];
 
 interface SidebarProps {
-    alertCount?: number;
+    // Alert count is now managed internally via localStorage
 }
 
-export default function Sidebar({ alertCount = 0 }: SidebarProps) {
+export default function Sidebar({}: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
     const [currentHash, setCurrentHash] = useState(window.location.hash || '#/');
 
     // Listen to hash changes
-    useState(() => {
+    useEffect(() => {
         const handleHashChange = () => {
             setCurrentHash(window.location.hash || '#/');
         };
         window.addEventListener('hashchange', handleHashChange);
         return () => window.removeEventListener('hashchange', handleHashChange);
-    });
+    }, []);
 
     return (
         <aside className={`sidebar ${collapsed ? 'collapsed' : ''}`}>
             <div className="sidebar-header">
-                {!collapsed && <h2 className="sidebar-title">🛡️ Web IDS</h2>}
+                {!collapsed && (
+                    <div className="sidebar-title-wrapper">
+                        <ShieldIcon size={24} className="sidebar-logo-icon" />
+                        <h2 className="sidebar-title">Web IDS</h2>
+                    </div>
+                )}
                 <button
                     className="sidebar-toggle"
                     onClick={() => setCollapsed(!collapsed)}
@@ -70,9 +76,6 @@ export default function Sidebar({ alertCount = 0 }: SidebarProps) {
                         >
                             <Icon size={20} className="nav-icon" />
                             {!collapsed && <span className="nav-label">{item.label}</span>}
-                            {item.path === '#/' && alertCount > 0 && (
-                                <span className="alert-badge">{alertCount}</span>
-                            )}
                         </a>
                     );
                 })}

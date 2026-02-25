@@ -1,4 +1,4 @@
-import { BellIcon, DownloadIcon } from '../Icons';
+import NotificationBell from '../NotificationBell';
 import './Header.css';
 
 interface HeaderProps {
@@ -15,13 +15,7 @@ export default function Header({ title, subtitle }: HeaderProps) {
                     {subtitle && <p className="header-subtitle">{subtitle}</p>}
                 </div>
                 <div className="header-actions">
-                    <button className="btn" title="Notifications">
-                        <BellIcon size={18} />
-                    </button>
-                    <button className="btn" title="Export Data">
-                        <DownloadIcon size={18} />
-                        <span>Export</span>
-                    </button>
+                    <NotificationBell />
                 </div>
             </div>
         </header>

@@ -2,6 +2,9 @@ import { useState, useEffect } from 'react';
 import Layout from '../components/layout/Layout';
 import MetricCard from '../components/MetricCard';
 import SeverityBadge from '../components/SeverityBadge';
+import SystemHealthMonitor from '../components/SystemHealthMonitor';
+import QuickActionsPanel from '../components/QuickActionsPanel';
+import ComplianceDashboard from '../components/ComplianceDashboard';
 import {
     ActivityIcon,
     ShieldIcon,
@@ -125,6 +128,15 @@ export default function Dashboard() {
                         color="purple"
                     />
                 </div>
+
+                {/* System Health Monitor */}
+                <SystemHealthMonitor />
+
+                {/* Quick Actions Panel */}
+                <QuickActionsPanel />
+
+                {/* Compliance Dashboard */}
+                <ComplianceDashboard />
 
                 {/* Recent Critical Alerts */}
                 <div className="card">
