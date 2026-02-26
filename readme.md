@@ -1,9 +1,3 @@
-Mantap 👍 kalau kamu mau pakai AI lain untuk bantu debug, kamu harus kasih dia **gambaran arsitektur lengkap**, bukan cuma error 422.
-
-Di bawah ini saya susun **briefing lengkap dan sistematis** supaya AI tersebut benar-benar paham keseluruhan project kamu.
-
-Kamu bisa copy–paste ini.
-
 ---
 
 # 📌 PROJECT OVERVIEW
